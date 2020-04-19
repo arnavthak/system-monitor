@@ -3,10 +3,12 @@
 
 class Processor {
  public:
-  float Utilization();  // TODO: See src/processor.cpp
+  double Utilization();  // DONE: See src/processor.cpp
 
-  // TODO: Declare any necessary private members
+  // DONE: Declare any necessary private members
  private:
+   double prevuser_, prevnice_, prevsystem_, previdle_, previowait_, previrq_, prevsoftirq_, prevsteal_;
+   void setPrevious(double user, double nice, double system, double idle, double iowait, double irq, double softirq, double steal);
 };
 
 #endif
