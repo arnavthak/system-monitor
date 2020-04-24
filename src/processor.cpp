@@ -17,7 +17,6 @@ void Processor::setPrevious(double user, double nice, double system, double idle
   prevsteal_ = steal;
 }
 
-// DONE: Return the aggregate CPU utilization
 double Processor::Utilization() {
   string line, cpu;
   double user, nice, system, idle, iowait, irq, softirq, steal;
