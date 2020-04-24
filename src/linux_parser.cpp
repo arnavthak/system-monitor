@@ -104,10 +104,10 @@ int LinuxParser::TotalProcesses() {
       instream >> processes;
       if (processes == "processes") {
         instream >> totalProcesses;
-        return totalProcesses;
       }
     }
   }
+  return totalProcesses;
 }
 
 int LinuxParser::RunningProcesses() {
@@ -121,10 +121,10 @@ int LinuxParser::RunningProcesses() {
       linestream >> key;
       if (key == "procs_running") {
         linestream >> runningProcesses;
-        return runningProcesses;
       }
     }
   }
+  return runningProcesses;
 }
 
 string LinuxParser::Command(int pid) {
@@ -176,10 +176,11 @@ string LinuxParser::User(int pid) {
       std::istringstream namestream(newline);
       namestream >> name >> x >> uid_test;
       if (uid == uid_test) {
-        return name;
+        break;
       }
     }
   }
+  return name;
 }
 
 long LinuxParser::UpTime(int pid) {
