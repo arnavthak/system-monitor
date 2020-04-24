@@ -18,6 +18,12 @@ class Process {
 
  private:
    int pid_;
+   double utime_ = 0.0;
+   double stime_ = 0.0;
+   double cutime_ = 0.0;
+   double cstime_ = 0.0;
+   double starttime_ = 0.0;
+
 };
 
 #endif
